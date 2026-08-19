@@ -1,1 +1,9 @@
-public class Practical8 { public static void main(String[] a){ if(a.length!=2){System.out.println("Usage: java Practical8 number1 number2");return;} System.out.println("Sum: "+(Double.parseDouble(a[0])+Double.parseDouble(a[1]))); } }
+public class Practical8 {
+    public static void main(String[] a) {
+        if (a.length != 2) {
+            System.out.println("Usage: java Practical8 number1 number2");
+            return;
+        }
+        System.out.println("Sum: " + (Double.parseDouble(a[0]) + Double.parseDouble(a[1])));
+    }
+}

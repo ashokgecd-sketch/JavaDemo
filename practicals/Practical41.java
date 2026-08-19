@@ -1,2 +1,23 @@
 import java.io.*;
-public class Practical41 {public static void main(String[] a){int l=0,w=0,c=0;try(BufferedReader r=new BufferedReader(new FileReader("data.txt"))){String x;while((x=r.readLine())!=null){l++;c+=x.replaceAll("\\s","").length();if(!x.trim().isEmpty())w+=x.trim().split("\\s+").length;}}catch(FileNotFoundException e){System.out.println("data.txt not found");return;}catch(IOException e){System.out.println(e.getMessage());return;}System.out.printf("Lines: %d%nWords: %d%nCharacters: %d%n",l,w,c);}}
+
+public class Practical41 {
+    public static void main(String[] a) {
+        int l = 0, w = 0, c = 0;
+        try (BufferedReader r = new BufferedReader(new FileReader("data.txt"))) {
+            String x;
+            while ((x = r.readLine()) != null) {
+                l++;
+                c += x.replaceAll("\\s", "").length();
+                if (!x.trim().isEmpty())
+                    w += x.trim().split("\\s+").length;
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("data.txt not found");
+            return;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+        System.out.printf("Lines: %d%nWords: %d%nCharacters: %d%n", l, w, c);
+    }
+}

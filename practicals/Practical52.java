@@ -1,2 +1,33 @@
-import javafx.application.*;import javafx.animation.*;import javafx.scene.*;import javafx.scene.control.*;import javafx.scene.layout.*;import javafx.scene.paint.*;import javafx.scene.shape.*;import javafx.stage.*;import javafx.util.*;
-public class Practical52 extends Application {public void start(Stage s){Pane p=new Pane();Circle ball=new Circle(15,Color.DODGERBLUE);ball.setCenterY(100);p.getChildren().add(ball);Timeline t=new Timeline(new KeyFrame(Duration.millis(20),e->{double x=ball.getCenterX()+3;if(x>p.getWidth()-15||x<15)ball.setUserData(-(ball.getUserData()==null?3:(double)ball.getUserData()));ball.setCenterX(ball.getCenterX()+(ball.getUserData()==null?3:(double)ball.getUserData()));}));t.setCycleCount(Animation.INDEFINITE);Button start=new Button("Start"),stop=new Button("Stop");Slider speed=new Slider(1,10,3);start.setOnAction(e->t.play());stop.setOnAction(e->t.pause());speed.valueProperty().addListener((o,x,n)->ball.setUserData(n.doubleValue()));VBox root=new VBox(10,p,new HBox(10,start,stop,speed));s.setScene(new Scene(root,500,250));s.show();}}
+import javafx.application.*;
+import javafx.animation.*;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.scene.paint.*;
+import javafx.scene.shape.*;
+import javafx.stage.*;
+import javafx.util.*;
+
+public class Practical52 extends Application {
+    public void start(Stage s) {
+        Pane p = new Pane();
+        Circle ball = new Circle(15, Color.DODGERBLUE);
+        ball.setCenterY(100);
+        p.getChildren().add(ball);
+        Timeline t = new Timeline(new KeyFrame(Duration.millis(20), e -> {
+            double x = ball.getCenterX() + 3;
+            if (x > p.getWidth() - 15 || x < 15)
+                ball.setUserData(-(ball.getUserData() == null ? 3 : (double) ball.getUserData()));
+            ball.setCenterX(ball.getCenterX() + (ball.getUserData() == null ? 3 : (double) ball.getUserData()));
+        }));
+        t.setCycleCount(Animation.INDEFINITE);
+        Button start = new Button("Start"), stop = new Button("Stop");
+        Slider speed = new Slider(1, 10, 3);
+        start.setOnAction(e -> t.play());
+        stop.setOnAction(e -> t.pause());
+        speed.valueProperty().addListener((o, x, n) -> ball.setUserData(n.doubleValue()));
+        VBox root = new VBox(10, p, new HBox(10, start, stop, speed));
+        s.setScene(new Scene(root, 500, 250));
+        s.show();
+    }
+}

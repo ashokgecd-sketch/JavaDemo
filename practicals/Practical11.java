@@ -1,2 +1,28 @@
-class Time11 { int hours,minutes; void setTime(int h,int m){hours=h;minutes=m;} void addTime(Time11 a,Time11 b){int t=a.hours*60+a.minutes+b.hours*60+b.minutes;hours=t/60;minutes=t%60;} void displayTime(){System.out.printf("%02d:%02d%n",hours,minutes);} }
-public class Practical11 { public static void main(String[] x){Time11 a=new Time11(),b=new Time11(),c=new Time11();a.setTime(2,50);b.setTime(1,25);c.addTime(a,b);c.displayTime();} }
+class Time11 {
+    int hours, minutes;
+
+    void setTime(int h, int m) {
+        hours = h;
+        minutes = m;
+    }
+
+    void addTime(Time11 a, Time11 b) {
+        int t = a.hours * 60 + a.minutes + b.hours * 60 + b.minutes;
+        hours = t / 60;
+        minutes = t % 60;
+    }
+
+    void displayTime() {
+        System.out.printf("%02d:%02d%n", hours, minutes);
+    }
+}
+
+public class Practical11 {
+    public static void main(String[] x) {
+        Time11 a = new Time11(), b = new Time11(), c = new Time11();
+        a.setTime(2, 50);
+        b.setTime(1, 25);
+        c.addTime(a, b);
+        c.displayTime();
+    }
+}

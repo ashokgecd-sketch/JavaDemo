@@ -1,1 +1,18 @@
-public class Practical30 { public static void main(String[] a){int n,d;try{if(a.length!=2)throw new IllegalArgumentException("Pass numerator and denominator");n=Integer.parseInt(a[0]);d=Integer.parseInt(a[1]);System.out.println("Result: "+(n/(double)d));}catch(NumberFormatException e){System.out.println("Numbers must be integers.");}catch(ArithmeticException e){System.out.println("Denominator cannot be zero.");}catch(IllegalArgumentException e){System.out.println(e.getMessage());}} }
+public class Practical30 {
+    public static void main(String[] a) {
+        int n, d;
+        try {
+            if (a.length != 2)
+                throw new IllegalArgumentException("Pass numerator and denominator");
+            n = Integer.parseInt(a[0]);
+            d = Integer.parseInt(a[1]);
+            System.out.println("Result: " + (n / (double) d));
+        } catch (NumberFormatException e) {
+            System.out.println("Numbers must be integers.");
+        } catch (ArithmeticException e) {
+            System.out.println("Denominator cannot be zero.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}

@@ -1,2 +1,31 @@
-class BankAccount18 { String account_holder_name;double balance;static double interest_rate=5;BankAccount18(String n,double b){account_holder_name=n;balance=b;} double interest(){return balance*interest_rate/100;} void show(){System.out.println(account_holder_name+" interest: "+interest());}static void setInterestRate(double r){interest_rate=r;} }
-public class Practical18 { public static void main(String[] a){BankAccount18 x=new BankAccount18("Asha",10000);x.show();BankAccount18.setInterestRate(6.5);x.show();} }
+class BankAccount18 {
+    String account_holder_name;
+    double balance;
+    static double interest_rate = 5;
+
+    BankAccount18(String n, double b) {
+        account_holder_name = n;
+        balance = b;
+    }
+
+    double interest() {
+        return balance * interest_rate / 100;
+    }
+
+    void show() {
+        System.out.println(account_holder_name + " interest: " + interest());
+    }
+
+    static void setInterestRate(double r) {
+        interest_rate = r;
+    }
+}
+
+public class Practical18 {
+    public static void main(String[] a) {
+        BankAccount18 x = new BankAccount18("Asha", 10000);
+        x.show();
+        BankAccount18.setInterestRate(6.5);
+        x.show();
+    }
+}

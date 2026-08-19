@@ -1,2 +1,22 @@
 import java.io.*;
-public class Practical40 {public static void main(String[] a){try(BufferedWriter w=new BufferedWriter(new FileWriter("students.txt"))){w.write("1,Asha,85\n2,Raj,78\n3,Mira,91\n");}catch(IOException e){System.out.println(e.getMessage());}finally{System.out.println("Write attempt complete");}try(BufferedReader r=new BufferedReader(new FileReader("students.txt"))){String x;while((x=r.readLine())!=null)System.out.println(x);}catch(IOException e){System.out.println(e.getMessage());}finally{System.out.println("Read attempt complete");}}}
+
+public class Practical40 {
+    public static void main(String[] a) {
+        try (BufferedWriter w = new BufferedWriter(new FileWriter("students.txt"))) {
+            w.write("1,Asha,85\n2,Raj,78\n3,Mira,91\n");
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Write attempt complete");
+        }
+        try (BufferedReader r = new BufferedReader(new FileReader("students.txt"))) {
+            String x;
+            while ((x = r.readLine()) != null)
+                System.out.println(x);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            System.out.println("Read attempt complete");
+        }
+    }
+}

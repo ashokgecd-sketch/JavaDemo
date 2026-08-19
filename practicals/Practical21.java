@@ -1,1 +1,19 @@
-public class Practical21 { static double calculateVolume(double s){return s*s*s;} static double calculateVolume(double l,double w,double h){return l*w*h;} static double calculateVolume(float r){return 4.0/3*Math.PI*r*r*r;} public static void main(String[] a){System.out.println(calculateVolume(3.0));System.out.println(calculateVolume(2,3,4));System.out.println(calculateVolume(2f));} }
+public class Practical21 {
+    static double calculateVolume(double s) {
+        return s * s * s;
+    }
+
+    static double calculateVolume(double l, double w, double h) {
+        return l * w * h;
+    }
+
+    static double calculateVolume(float r) {
+        return 4.0 / 3 * Math.PI * r * r * r;
+    }
+
+    public static void main(String[] a) {
+        System.out.println(calculateVolume(3.0));
+        System.out.println(calculateVolume(2, 3, 4));
+        System.out.println(calculateVolume(2f));
+    }
+}

@@ -1,3 +1,47 @@
 import java.util.*;
-interface Order28 {void placeOrder(String item,int qty);void cancelOrder(int id);void generateBill();} abstract class PartialOrder implements Order28 {String item;int qty,id=101;public void placeOrder(String i,int q){item=i;qty=q;System.out.println("Order placed: "+id);}} class FinalOrder extends PartialOrder {boolean cancelled;public void cancelOrder(int x){cancelled=x==id;System.out.println(cancelled?"Order cancelled":"Order not found");}public void generateBill(){System.out.println(cancelled?"Cannot bill cancelled order":"Bill: "+item+" x "+qty);}}
-public class Practical28 {public static void main(String[] a){Scanner s=new Scanner(System.in);FinalOrder o=new FinalOrder();System.out.print("Item and quantity: ");o.placeOrder(s.next(),s.nextInt());System.out.print("1 Bill, 2 Cancel: ");if(s.nextInt()==1)o.generateBill();else o.cancelOrder(101);}}
+
+interface Order28 {
+    void placeOrder(String item, int qty);
+
+    void cancelOrder(int id);
+
+    void generateBill();
+}
+
+abstract class PartialOrder implements Order28 {
+    String item;
+    int qty, id = 101;
+
+    public void placeOrder(String i, int q) {
+        item = i;
+        qty = q;
+        System.out.println("Order placed: " + id);
+    }
+}
+
+class FinalOrder extends PartialOrder {
+    boolean cancelled;
+
+    public void cancelOrder(int x) {
+        cancelled = x == id;
+        System.out.println(cancelled ? "Order cancelled" : "Order not found");
+    }
+
+    public void generateBill() {
+        System.out.println(cancelled ? "Cannot bill cancelled order" : "Bill: " + item + " x " + qty);
+    }
+}
+
+public class Practical28 {
+    public static void main(String[] a) {
+        Scanner s = new Scanner(System.in);
+        FinalOrder o = new FinalOrder();
+        System.out.print("Item and quantity: ");
+        o.placeOrder(s.next(), s.nextInt());
+        System.out.print("1 Bill, 2 Cancel: ");
+        if (s.nextInt() == 1)
+            o.generateBill();
+        else
+            o.cancelOrder(101);
+    }
+}

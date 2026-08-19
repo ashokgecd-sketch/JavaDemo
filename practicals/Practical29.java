@@ -1,2 +1,32 @@
-abstract class Vehicle29 {abstract String fuelType();abstract int noOfWheels();} class Car29 extends Vehicle29 {String fuelType(){return "Petrol/Diesel";}int noOfWheels(){return 4;}} class Bike29 extends Vehicle29 {String fuelType(){return "Petrol";}int noOfWheels(){return 2;}}
-public class Practical29 {public static void main(String[] a){for(Vehicle29 v:new Vehicle29[]{new Car29(),new Bike29()})System.out.println(v.fuelType()+", wheels: "+v.noOfWheels());}}
+abstract class Vehicle29 {
+    abstract String fuelType();
+
+    abstract int noOfWheels();
+}
+
+class Car29 extends Vehicle29 {
+    String fuelType() {
+        return "Petrol/Diesel";
+    }
+
+    int noOfWheels() {
+        return 4;
+    }
+}
+
+class Bike29 extends Vehicle29 {
+    String fuelType() {
+        return "Petrol";
+    }
+
+    int noOfWheels() {
+        return 2;
+    }
+}
+
+public class Practical29 {
+    public static void main(String[] a) {
+        for (Vehicle29 v : new Vehicle29[] { new Car29(), new Bike29() })
+            System.out.println(v.fuelType() + ", wheels: " + v.noOfWheels());
+    }
+}
