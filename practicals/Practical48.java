@@ -1,0 +1,1 @@
+import java.util.*;class Box<T>{ArrayList<T> items=new ArrayList<>();void addItem(T x){items.add(x);}void display(){System.out.println(items);}} public class Practical48 {public static void main(String[] a){Box<String> names=new Box<>();names.addItem("Asha");names.addItem("Raj");Box<Integer> rolls=new Box<>();rolls.addItem(1);rolls.addItem(2);names.display();rolls.display();}}

@@ -1,0 +1,2 @@
+class BillGenerator { double generateBill(int total){return total;} double generateBill(int total,int discount){return Math.max(0,total-discount);} double generateBill(int total,double percent){return total*(1-percent/100);} }
+public class Practical15 { public static void main(String[] a){BillGenerator b=new BillGenerator();System.out.println("Regular: "+b.generateBill(1000));System.out.println("Privileged: "+b.generateBill(1000,100));System.out.println("Festive: "+b.generateBill(1000,15.0));} }

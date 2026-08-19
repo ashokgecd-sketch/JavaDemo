@@ -1,0 +1,2 @@
+class Employee24 {String name="Asha",department="IT";void displayDetails(){System.out.println(name+", "+department);}} class Manager extends Employee24 {int teamSize=8;@Override void displayDetails(){super.displayDetails();System.out.println("Team size: "+teamSize);}}
+public class Practical24 {public static void main(String[] a){Employee24 e=new Employee24(),m=new Manager();e.displayDetails();m.displayDetails();}}

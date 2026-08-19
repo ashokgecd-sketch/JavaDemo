@@ -1,0 +1,1 @@
+import java.util.*;public class Practical50 {static <T extends Comparable<T>> void sortList(List<T> x){Collections.sort(x);}public static void main(String[] a){ArrayList<Integer> n=new ArrayList<>(Arrays.asList(3,1,2));ArrayList<String> s=new ArrayList<>(Arrays.asList("Raj","Asha"));System.out.println(n+" "+s);sortList(n);sortList(s);System.out.println(n+" "+s);}}

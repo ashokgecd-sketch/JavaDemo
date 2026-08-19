@@ -1,0 +1,2 @@
+class SequentialThread extends Thread {int from,to;Thread previous;SequentialThread(int f,int t,Thread p){from=f;to=t;previous=p;}public void run(){try{if(previous!=null)previous.join();for(int i=from;i<=to;i++)System.out.println(i);}catch(InterruptedException e){interrupt();}}}
+public class Practical36 {public static void main(String[] a)throws InterruptedException{Thread t1=new SequentialThread(1,100,null),t2=new SequentialThread(101,200,t1),t3=new SequentialThread(201,300,t2);t1.start();t2.start();t3.start();t3.join();}}
